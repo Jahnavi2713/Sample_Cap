@@ -1,0 +1,18 @@
+
+---
+spring:
+  config:
+    activate:
+      on-profile: default
+  sql:
+    init:
+      schema-locations: classpath:schema-h2.sql
+cds:
+  multi-tenancy:
+    mtxs:
+      enabled: true
+    sidecar:
+      url: http://localhost:4005/
+  data-source:
+    auto-config:
+      enabled: false

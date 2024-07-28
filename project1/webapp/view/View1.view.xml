@@ -2,8 +2,9 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
    <Page title="My App">
-			<content/>
-           
-            
+			<content>
+            <HBox>
+            </HBox>
+           </content>
 		</Page>
 </mvc:View>

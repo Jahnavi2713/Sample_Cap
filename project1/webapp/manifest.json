@@ -83,6 +83,13 @@
           "target": [
             "TargetView1"
           ]
+        },
+        {
+          "name": "dashboard",
+          "pattern": "dashboard",
+          "target": [
+            "Dashboard"
+          ]
         }
       ],
       "targets": {
@@ -92,6 +99,13 @@
           "clearControlAggregation": false,
           "viewId": "View1",
           "viewName": "View1"
+        },
+        "Dashboard": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Dashboard",
+          "viewName": "Dashboard"
         }
       }
     },

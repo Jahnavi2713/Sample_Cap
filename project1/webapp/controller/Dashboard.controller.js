@@ -4,14 +4,15 @@ sap.ui.define([
 function (Controller) {
     "use strict";
 
-    return Controller.extend("samplecap.project1.controller.View1", {
+    return Controller.extend("samplecap.project1.controller.Dashboard", {
         onInit: function () {
             this.oOwnerComponent = this.getOwnerComponent();
             this.oRouter = this.oOwnerComponent.getRouter();
             this.oModel = this.oOwnerComponent.getModel();
+            this.oRouter.getRoute("dashboard").attachMatched(this._onRouteMatched, this);
         },
         onPressLogin:function(){
-            this.oRouter.navTo("dashboard");
+            console.log("Hi");
         }
     });
 });

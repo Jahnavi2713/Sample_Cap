@@ -1,10 +1,32 @@
 <mvc:View controllerName="samplecap.project1.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-   <Page title="My App">
-			<content>
-            <HBox>
-            </HBox>
-           </content>
-		</Page>
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:field="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Page title="My App">
+        <VBox class="sapUiContentPadding" justifyContent="Center" alignItems="Center" fitContainer="true">
+            <f:Card class="sapUiMediumMargin" width="350px">
+                <f:header>
+                    <card:Header title="Login" iconSrc="sap-icon://visits" />
+                </f:header>
+                <f:content>
+                    <form:SimpleForm id="loginForm" class="sapUiSizeCozy" editable="false" layout="ResponsiveGridLayout" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+                        <form:content>
+                            <Label labelFor="inpEmail" text="Username" />
+                            <Input type="Email" id="inpEmail" class="sapUiSizeCozy" value="" field:type="Input" valueState ="{loginModel>/emailValueState}" valueStateText ="{loginModel>/emailValueStateText}" />
+                            <Label labelFor="inpPassword" text="Password" />
+                            <Input type="Password" id="inpPassword" value="" class="sapUiSizeCozy" field:type="Input" valueState ="{loginModel>/passValueState}" valueStateText ="{loginModel>/passValueStateText}" />
+                            <HBox justifyContent="End">
+                                <Link text="Forgot Password?" press="onPressChangePassword"/>
+                            </HBox>
+                            <Button id="loginBtn" text="Login" type="Emphasized" class="sapUiSizeCozy" width="100%" press="onPressLogin"/>
+                        </form:content>
+                    </form:SimpleForm>
+                </f:content>
+            </f:Card>
+        </VBox>
+    </Page>
 </mvc:View>

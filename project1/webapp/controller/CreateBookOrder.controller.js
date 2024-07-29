@@ -4,18 +4,15 @@ sap.ui.define([
 function (BaseController) {
     "use strict";
 
-    return BaseController.extend("samplecap.project1.controller.Dashboard", {
+    return BaseController.extend("samplecap.project1.controller.CreateBookOrder", {
         onInit: function () {
             this.oOwnerComponent = this.getOwnerComponent();
             this.oRouter = this.oOwnerComponent.getRouter();
             this.oModel = this.oOwnerComponent.getModel();
-            this.oRouter.getRoute("dashboard").attachMatched(this._onRouteMatched, this);
+            this.oRouter.getRoute("create-book-order").attachMatched(this._onRouteMatched, this);
         },
-        onPressLogin:function(){
-            console.log("Hi");
-        },
-        onPressTile:function(){
-           this.oRouter.navTo("manage-book-order"); 
+        onPressNavCreate:function(){
+            this.oRouter.navTo("create-book-order");
         }
     });
 });

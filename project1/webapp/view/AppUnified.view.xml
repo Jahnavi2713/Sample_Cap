@@ -10,7 +10,7 @@
              <Bar>
                 <contentLeft>
                     <Button icon="sap-icon://navigation-left-arrow" tooltip="Back" type="Ghost" press="onNavBack"/>
-                    <Image src="./images/PropertyZone.png" height="40px" press="onPressLogo" />
+                    <Image src="" height="40px" press="onPressLogo" />
                     <!-- <Title titleStyle="H6" text="{/genericTitle}" textAlign="Center"/> -->
                 </contentLeft>
                 <contentMiddle>

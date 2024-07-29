@@ -91,6 +91,20 @@
           "target": [
             "Dashboard"
           ]
+        },
+        {
+          "name": "manage-book-order",
+          "pattern": "manage-book-order",
+          "target": [
+            "ManageBookOrder"
+          ]
+        },
+        {
+          "name": "create-book-order",
+          "pattern": "create-book-order",
+          "target": [
+            "CreateBookOrder"
+          ]
         }
        
       ],
@@ -111,6 +125,24 @@
           "controlAggregation": "pages",
           "viewId": "Dashboard",
           "viewName": "Dashboard",
+          "parent":"AppUnified",
+          "controlId":"pageContainer"
+        },
+        "ManageBookOrder": {
+          "viewType": "XML",
+          "transition": "slide",
+          "controlAggregation": "pages",
+          "viewId": "ManageBookOrder",
+          "viewName": "ManageBookOrder",
+          "parent":"AppUnified",
+          "controlId":"pageContainer"
+        },
+        "CreateBookOrder": {
+          "viewType": "XML",
+          "transition": "slide",
+          "controlAggregation": "pages",
+          "viewId": "CreateBookOrder",
+          "viewName": "CreateBookOrder",
           "parent":"AppUnified",
           "controlId":"pageContainer"
         }

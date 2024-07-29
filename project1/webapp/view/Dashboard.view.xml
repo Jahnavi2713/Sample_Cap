@@ -2,16 +2,57 @@
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
     xmlns:f="sap.f"
-    xmlns:card="sap.f.cards"
-    xmlns:core="sap.ui.core"
-    xmlns:form="sap.ui.layout.form"
-    xmlns:field="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-    <Page title="{i18n>dashboard}">
-      <GenericTile class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" header="Application"
-		subheader="Sample App" press="press" url="https://www.sap.com/">
-		<TileContent>
-			<ImageContent src="test-resources/sap/m/demokit/sample/GenericTileAsLaunchTile/images/SAPLogoLargeTile_28px_height.png" />
-		</TileContent>
-	</GenericTile>
-    </Page>
+    xmlns:u="sap.uxap"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+
+            <u:ObjectPageLayout id="oplDashboard" showHeaderContent="false" class="dashboard">
+                <u:sections>
+                    <u:ObjectPageSection titleUppercase="false" title="Orders">
+                        <u:subSections>
+                            <u:ObjectPageSubSection titleUppercase="false">
+                                <f:GridContainer columnsChange=".onGridColumnsChange" items="">
+                                    <f:layout>
+                                        <f:GridContainerSettings rowSize="55px" columnSize="84px" gap="12px" />
+                                    </f:layout>
+                                    <f:layoutXS>
+                                        <f:GridContainerSettings rowSize="45px" columnSize="70px" gap="12px" />
+                                    </f:layoutXS>
+                                    <GenericTile header="Book Orders" subheader="Orders" press="onPressTile" app:route="" app:key="">
+                                        <layoutData>
+                                            <f:GridContainerItemLayoutData minRows="2" columns="2" />
+                                        </layoutData>
+                                        <TileContent footer="Order Details">
+                                            <NumericContent value="7" icon="sap-icon://customer-order-entry" withMargin="false" />
+                                        </TileContent>
+                                    </GenericTile>
+                                </f:GridContainer>
+                            </u:ObjectPageSubSection>
+                        </u:subSections>
+                    </u:ObjectPageSection>
+                    <u:ObjectPageSection titleUppercase="false" title="MasterData">
+                        <u:subSections>
+                            <u:ObjectPageSubSection titleUppercase="false">
+                                <f:GridContainer columnsChange=".onGridColumnsChange" items="">
+                                    <f:layout>
+                                        <f:GridContainerSettings rowSize="55px" columnSize="84px" gap="12px" />
+                                    </f:layout>
+                                    <f:layoutXS>
+                                        <f:GridContainerSettings rowSize="45px" columnSize="70px" gap="12px" />
+                                    </f:layoutXS>
+                                    <GenericTile state="" header="Book Archive" subheader="Total Books" press="onPressTile" app:route="" app:key="">
+                                        <layoutData>
+                                            <f:GridContainerItemLayoutData minRows="2" columns="2" />
+                                        </layoutData>
+                                        <TileContent footer="Collection">
+                                            <NumericContent value="13" icon="sap-icon://sap-box" withMargin="false" />
+                                        </TileContent>
+                                    </GenericTile>
+                                </f:GridContainer>
+                            </u:ObjectPageSubSection>
+                        </u:subSections>
+                    </u:ObjectPageSection>
+                </u:sections>
+            </u:ObjectPageLayout>
+
+
 </mvc:View>

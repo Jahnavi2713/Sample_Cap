@@ -1,10 +1,10 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "samplecap/project1/controller/BaseController",
 ],
-function (Controller) {
+function (BaseController) {
     "use strict";
 
-    return Controller.extend("samplecap.project1.controller.Dashboard", {
+    return BaseController.extend("samplecap.project1.controller.Dashboard", {
         onInit: function () {
             this.oOwnerComponent = this.getOwnerComponent();
             this.oRouter = this.oOwnerComponent.getRouter();

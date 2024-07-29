@@ -77,6 +77,7 @@
         "clearControlAggregation": false
       },
       "routes": [
+        
         {
           "name": "RouteView1",
           "pattern": ":?query:",
@@ -91,8 +92,12 @@
             "Dashboard"
           ]
         }
+       
       ],
       "targets": {
+        "AppUnified": {
+          "viewName": "AppUnified"
+        },
         "TargetView1": {
           "viewType": "XML",
           "transition": "slide",
@@ -103,9 +108,11 @@
         "Dashboard": {
           "viewType": "XML",
           "transition": "slide",
-          "clearControlAggregation": false,
+          "controlAggregation": "pages",
           "viewId": "Dashboard",
-          "viewName": "Dashboard"
+          "viewName": "Dashboard",
+          "parent":"AppUnified",
+          "controlId":"pageContainer"
         }
       }
     },

@@ -18,7 +18,6 @@ modules:
       CDS_MULTITENANCY_SIDECAR_URL: ~{mtx-url}
   - name: Sample_Cap-registry
   - name: Sample_Cap-auth
-  - name: Sample_Cap-db
   - name: app-api
     properties:
       CDS_MULTITENANCY_APPUI_URL: ~{url}
@@ -40,7 +39,6 @@ modules:
   path: mtx/sidecar
   requires:
   - name: Sample_Cap-auth
-  - name: Sample_Cap-db
   provides:
   - name: mtx-api
     properties:
@@ -116,6 +114,11 @@ modules:
     - npm install
     - npm run build:cf
     supported-platforms: []
+- name: db_1
+  type: hdb
+  path: db_1
+  requires:
+  - name: hdi_db_1
 resources:
 - name: Sample_Cap-registry
   type: org.cloudfoundry.managed-service
@@ -179,6 +182,13 @@ resources:
     service: destination
     service-name: Sample_Cap-destination-service
     service-plan: lite
+- name: hdi_db_1
+  type: com.sap.xs.hdi-container
+  parameters:
+    config:
+      schema: theriyadhu
+  properties:
+    hdi-container-name: ${service-name}
 parameters:
   deploy_mode: html5-repo
   enable-parallel-deployments: true
